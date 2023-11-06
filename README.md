@@ -7,7 +7,7 @@ Verzija: 1.0 <br>
 Jezik: hrvatski <br>
 Format datuma: ISO 8601 <br>
 Tema: Popis sportskih natjecanja <br>
-Ključne riječi: natjecanje, natjecatelj, igrač, tim <br>
+Ključne riječi: natjecanje, natjecatelj, igrač, tim <br> <br>
 Opis atributa: <br>
  * naziv: naziv natjecanja <br>
  * sport: ime sporta za koje se održava natjecanje <br>
