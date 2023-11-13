@@ -1,0 +1,158 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "title": "Sportska natjecanja",
+    "description": "Skup sportskih natjecanja",
+    "type": "array",
+    "default": [],
+    "items": {
+        "title": "Sportsko natjecanje",
+        "description": "Objekt koji sadrži sve podatke o sportskom natjecanju.",
+        "type": "object",
+        "required": [
+            "naziv",
+            "sport",
+            "godina",
+            "organizator",
+            "prvak",
+            "mjestoFinale",
+            "brojNatjecatelja",
+            "igraci",
+            "timovi"
+        ],
+        "properties": {
+            "naziv": {
+                "title": "Naziv sportskog natjecanja",
+                "description": "Naziv sportskog natjecanja.",
+                "type": "string"
+            },
+            "sport": {
+                "title": "Naziv sporta",
+                "description": "Naziv sporta za koje se održava natjecanje.",
+                "type": "string"
+            },
+            "godina": {
+                "title": "Godina održavanja",
+                "description": "Godina održavanja natjecanja.",
+                "type": "integer"
+            },
+            "organizator": {
+                "title": "Organizator",
+                "description": "Organizator natjecanja.",
+                "type": "string"
+            },
+            "prvak": {
+                "title": "Prvak",
+                "description": "Naziv tima ili ime i prezime prvaka.",
+                "type": "string"
+            },
+            "mjestoFinale": {
+                "title": "Mjesto finala",
+                "description": "Mjesto održavanja finala natjecanja.",
+                "type": [
+                    "null",
+                    "string"
+                ]
+            },
+            "brojNatjecatelja": {
+                "title": "Broj natjecatelja",
+                "description": "Broj natjecatelja.",
+                "type": "integer"
+            },
+            "igraci": {
+                "title": "Igrači",
+                "description": "Skupa igrača koji sudjeluju na natjecanju.",
+                "type": [
+                    "null",
+                    "array"
+                ],
+                "items": {
+                    "title": "Igrač",
+                    "description": "Objekt koji sadrži sve podatke o igraču.",
+                    "type": "object",
+                    "required": [
+                        "ime",
+                        "prezime",
+                        "datumRodenja",
+                        "spol",
+                        "drzava"
+                    ],
+                    "properties": {
+                        "ime": {
+                            "title": "Ime",
+                            "description": "Ime igrača.",
+                            "type": "string"
+                        },
+                        "prezime": {
+                            "title": "Prezime",
+                            "description": "Prezime igrača.",
+                            "type": "string"
+                        },
+                        "datumRodenja": {
+                            "title": "Datum rođenja",
+                            "description": "Datum rođenja igrača.",
+                            "type": "string"
+                        },
+                        "spol": {
+                            "title": "Spol",
+                            "description": "Spol igrača.",
+                            "type": "string"
+                        },
+                        "drzava": {
+                            "title": "Država",
+                            "description": "Naziv države iz koje dolazi igrač.",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "timovi": {
+                "title": "Timovi",
+                "description": "Skup timova koji sudjeluju na natjecanju.",
+                "type": [
+                    "array",
+                    "null"
+                ],
+                "items": {
+                    "title": "Tim",
+                    "description": "Objekt koji sadrži sve podatke o timu.",
+                    "type": "object",
+                    "required": [
+                        "naziv",
+                        "drzava",
+                        "osnovan",
+                        "spolIgraca",
+                        "trener"
+                    ],
+                    "properties": {
+                        "naziv": {
+                            "title": "Naziv tima",
+                            "description": "Naziv tima.",
+                            "type": "string"
+                        },
+                        "drzava": {
+                            "title": "Država",
+                            "description": "Država iz koje dolazi tim.",
+                            "type": "string"
+                        },
+                        "osnovan": {
+                            "title": "Datum osnovanja",
+                            "description": "Datum kada je tim osnovan.",
+                            "type": "string"
+                        },
+                        "spolIgraca": {
+                            "title": "Spol igrača",
+                            "description": "Spol igrača.",
+                            "type": "string"
+                        },
+                        "trener": {
+                            "title": "Trener",
+                            "description": "Ime i prezime trenara tima.",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
