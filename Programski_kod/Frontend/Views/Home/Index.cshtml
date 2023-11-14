@@ -1,9 +1,36 @@
-﻿<h1>Preuzmi CSV datoteku</h1>
+﻿@{
+    ViewData["Title"] = "Sportska natjecanja";
+}
+
+<h1>Sportska natjecanja</h1>
+
+<hr />
+
+<h2>Preuzmi CSV datoteku</h2>
 
 <a class="btn btn-primary" href="https://localhost:7223/api/data/csv">Preuzmi CSV</a>
 
 <hr />
 
-<h1>Preuzmi Json datoteku</h1>
+<h2>Preuzmi Json datoteku</h2>
 
 <a class="btn btn-primary" href="https://localhost:7223/api/data/json">Preuzmi Json</a>
+
+<hr />
+
+<ul class="list-group"> Opis atributa Csv datoteke:
+    <li class="list-group-item">Naziv: naziv natjecanja</li>
+    <li class="list-group-item">Sport: ime sporta za koje se održava natjecanje</li>
+    <li class="list-group-item">Godina: godina održavanja natjecanja</li>
+    <li class="list-group-item">Organizator: ime organizacije koja organizira natjecanje</li>
+    <li class="list-group-item">Prvak: ime ili naziv osvajača natjecanja</li>
+    <li class="list-group-item">BrojNatjecatelja: broj natjecatelja u natjecanju</li>
+    <li class="list-group-item">DržaveNatjecatelja: popis država pod koje natjecatelji spadaju</li>
+    <li class="list-group-item">SpolNatjecatelja: popis spolova natjecatelja</li>
+    <li class="list-group-item">ImenaIgrača: popis imena igrača</li>
+    <li class="list-group-item">PrezimenaIgrača: popis prezimena igrača</li>
+    <li class="list-group-item">DatumRođenjaIgrača: popis datuma rođenja igrača</li>
+    <li class="list-group-item">NaziviTimova: popis naziva timova</li>
+    <li class="list-group-item">Osnovani: popis datuma kada su timovi osnovani</li>
+    <li class="list-group-item">TreneriTimova: popis trenera timova</li>
+</ul>
