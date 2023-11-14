@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Text;
 using System.Text.Json;
 using Backend.Data.Entities;
-using Backend.Models;
+using ClassLibrary;
 using Backend.Services.Data;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -24,16 +24,33 @@ namespace Backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<NatjecanjeDto>>> GetNatjecanja()
+        public async Task<ActionResult<List<NatjecanjeDto>>> GetNatjecanja([FromQuery] string? searchText = null, [FromQuery] string? filterColumn = null)
         {
-            var natjecanja = await _dataService.GetNatjecanja();
-            return Ok(natjecanja);
+            if (!string.IsNullOrEmpty(searchText) && !string.IsNullOrEmpty(filterColumn))
+            {
+                var natjecanja = await _dataService.GetFilteredNatjecanja(searchText, filterColumn);
+                return Ok(natjecanja);
+            } else
+            {
+                var natjecanja = await _dataService.GetNatjecanja();
+                return Ok(natjecanja);
+            }
         }
 
         [HttpGet("json")]
-        public async Task<ActionResult> GetJson()
+        public async Task<ActionResult> GetJson([FromQuery] string? searchText = null, [FromQuery] string? filterColumn = null)
         {
-            var natjecanja = await _dataService.GetNatjecanja();
+            List<NatjecanjeDto> natjecanja;
+
+            if (!string.IsNullOrEmpty(searchText) && !string.IsNullOrEmpty(filterColumn))
+            {
+                natjecanja = await _dataService.GetFilteredNatjecanja(searchText, filterColumn);
+            }
+            else
+            {
+                natjecanja = await _dataService.GetNatjecanja();
+            }
+
             var json = JsonConvert.SerializeObject(natjecanja, Formatting.Indented);
 
             var jsonBytes = Encoding.Unicode.GetBytes(json);
@@ -41,9 +58,19 @@ namespace Backend.Controllers
         }
 
         [HttpGet("csv")]
-        public async Task<ActionResult> GetCsv()
+        public async Task<ActionResult> GetCsv([FromQuery] string? searchText = null, [FromQuery] string? filterColumn = null)
         {
-            var natjecanja = await _dataService.GetCsv();
+            List<CsvDto> natjecanja;
+
+            if (!string.IsNullOrEmpty(searchText) && !string.IsNullOrEmpty(filterColumn))
+            {
+                natjecanja = await _dataService.GetFilteredCsv(searchText, filterColumn);
+            }
+            else
+            {
+                natjecanja = await _dataService.GetCsv();
+            }
+
             var csvBuilder = new StringBuilder();
             csvBuilder.AppendLine("Naziv,Sport,Godina,Organizator,Prvak,MjestoFinale,BrojNatjecatelja,DržaveNatjecatelja,SpolNatjecatelja,ImenaIgrača,PrezimenaIgrača,DatumRodjenjaIgrača,NaziviTimova,Osnovani,TreneriTimova");
             foreach (var natjecanje in natjecanja)

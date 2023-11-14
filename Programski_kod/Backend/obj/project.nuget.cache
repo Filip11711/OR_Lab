@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uPqSIgMY9wSrMKyQ7OyrPMsAmqjqBU6W1RhKaMH3JD4TzSuwIzIVQ344iM5rr2NQbW+3DfZuWvob3jrGOWTJQA==",
+  "dgSpecHash": "CVTbznUMOYe8sDIl8dwfjgbrIPQWDqBHLcNU7KtOEUnfrkHlUi+cAQRypL5wlU3Y4Qk8wf2dn2kDN5FufgdBYw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\filip\\Desktop\\Faks\\4. godina\\Zimski\\Otvoreno_racunarstvo\\Github\\Backend\\Backend\\Backend.csproj",
+  "projectFilePath": "C:\\Users\\filip\\Desktop\\Faks\\4. godina\\Zimski\\Otvoreno_racunarstvo\\Github\\Programski_kod\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\filip\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

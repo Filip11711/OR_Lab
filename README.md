@@ -1,5 +1,5 @@
-# OR_Lab1
-## Naslov: Prva laboratorijska vježba iz kolegija Otvoreno računarstvo
+# Prva laboratorijska vježba iz kolegija Otvoreno računarstvo
+## Naslov: Sportska natjecanja
 Licenca: Creative Commons - CC0 1.0 Universal <br>
 Autor: Filip Jakovina <br>
 Objavljeno: 01.11.2023. <br>
@@ -8,7 +8,7 @@ Jezik: hrvatski <br>
 Format datuma: ISO 8601 <br>
 Tema: Popis sportskih natjecanja <br>
 Ključne riječi: natjecanje, natjecatelj, igrač, tim <br> <br>
-Opis atributa: <br>
+Opis atributa csv datoteke: <br>
  * naziv: naziv natjecanja <br>
  * sport: ime sporta za koje se održava natjecanje <br>
  * godina: godina održavanja natjecanja <br>

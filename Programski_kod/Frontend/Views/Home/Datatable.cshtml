@@ -1,0 +1,165 @@
+﻿@model List<ClassLibrary.NatjecanjeDto>
+
+<h1>Sportska natjecanja</h1>
+
+<form id="filterForm">
+    <label for="searchText">Traži:</label>
+    <input type="text" id="searchText" name="searchText">
+
+    <select id="filterColumn" name="filterColumn">
+        <option value="Wildcard">Sva polja (wildcard)</option>
+        <option value="Naziv">Naziv</option>
+        <option value="Sport">Sport</option>
+        <option value="Godina">Godina</option>
+        <option value="Organizator">Organizator</option>
+        <option value="Prvak">Prvak</option>
+        <option value="MjestoFinale">Mjesto finala</option>
+        <option value="BrojNatjecatelja">Broj natjecatelja</option>
+        <option value="Drzava">Država</option>
+        <option value="Spol">Spol</option>
+        <option value="Ime">Ime</option>
+        <option value="Prezime">Prezime</option>
+        <option value="DatumRodenja">Datum rođenja</option>
+        <option value="NazivTim">Naziv tima</option>
+        <option value="Osnovan">Osnovan</option>
+        <option value="Trener">Trener</option>
+    </select>
+
+    <button id="filterButton" type="button" onclick="applyFilter()">Filtriraj</button>
+</form>
+
+<a id="csvLink" class="btn btn-primary" href="https://localhost:7223/api/data/csv">Preuzmi CSV</a>
+<a id="jsonLink" class="btn btn-primary" href="https://localhost:7223/api/data/json">Preuzmi Json</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Sport</th>
+            <th>Godina</th>
+            <th>Organizator</th>
+            <th>Prvak</th>
+            <th>Mjesto finala</th>
+            <th>Broj natjecatelja</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var natjecanje in Model)
+        {
+            <tr>
+                <td>@natjecanje.Naziv</td>
+                <td>@natjecanje.Sport</td>
+                <td>@natjecanje.Godina</td>
+                <td>@natjecanje.Organizator</td>
+                <td>@natjecanje.Prvak</td>
+                <td>@natjecanje.MjestoFinale</td>
+                <td>@natjecanje.BrojNatjecatelja</td>
+                <td>
+                    <button class="toggle-details">Prikaži detalje</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <div class="details full-width" style="display: none;">
+                        <table class="table">
+                            @if (natjecanje.Igraci == null)
+                            {
+                                <thead>
+                                    <tr>
+                                        <th>Naziv</th>
+                                        <th>Država</th>
+                                        <th>Osnovan</th>
+                                        <th>Spol igrača</th>
+                                        <th>Trener</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(var tim in natjecanje.Timovi)
+                                    {
+                                        <tr>
+                                            <td>@tim.Naziv</td>
+                                            <td>@tim.Drzava</td>
+                                            <td>@tim.Osnovan</td>
+                                            <td>@tim.SpolIgraca</td>
+                                            <td>@tim.Trener</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            } else
+                            {
+                                <thead>
+                                    <tr>
+                                        <th>Ime</th>
+                                        <th>Prezime</th>
+                                        <th>Datum rođenja</th>
+                                        <th>Spol</th>
+                                        <th>Država</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var igrac in natjecanje.Igraci)
+                                    {
+                                        <tr>
+                                            <td>@igrac.Ime</td>
+                                            <td>@igrac.Prezime</td>
+                                            <td>@igrac.DatumRodenja</td>
+                                            <td>@igrac.Spol</td>
+                                            <td>@igrac.Drzava</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            }
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".toggle-details").on("click", function () {
+            var detailsDiv = $(this).closest("tr").next().find(".details");
+
+            detailsDiv.toggle();
+        });
+    });
+</script>
+<script>
+    function applyFilter() {
+        var searchText = document.getElementById("searchText").value;
+        var filterColumn = document.getElementById("filterColumn").value;
+
+        var queryString = "?searchText=" + encodeURIComponent(searchText) + "&filterColumn=" + encodeURIComponent(filterColumn);
+
+        var currentUrl = window.location.href;
+
+        var newUrl = currentUrl.indexOf('?') !== -1 ? currentUrl.split('?')[0] + queryString : currentUrl + queryString;
+
+        window.location.href = newUrl;
+    }
+    document.getElementById("filterButton").addEventListener("click", applyFilter);
+</script>
+<script>
+    function getCurrentQueryString() {
+        return window.location.search.substring(1);
+    }
+
+    function updateLinkHref() {
+        var currentQueryString = getCurrentQueryString();
+        var jsonLink = $('#jsonLink');
+        var csvLink = $('#csvLink');
+
+        if (currentQueryString.length > 0) {
+            var linkHref = jsonLink.attr('href') + '?' + currentQueryString;
+            jsonLink.attr('href', linkHref);
+
+            linkHref = csvLink.attr('href') + '?' + currentQueryString;
+            csvLink.attr('href', linkHref);
+        }
+    }
+
+    updateLinkHref();
+</script>
