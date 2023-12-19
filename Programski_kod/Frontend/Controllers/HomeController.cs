@@ -32,9 +32,9 @@ namespace Frontend.Controllers
                         {
                             string apiResponse = await response.Content.ReadAsStringAsync();
 
-                            var natjecanja = JsonConvert.DeserializeObject<List<NatjecanjeDto>>(apiResponse);
+                            var apiResponseObject = JsonConvert.DeserializeObject<ApiResponse<List<NatjecanjeDto>>>(apiResponse);
 
-                            return View(natjecanja);
+                            return View(apiResponseObject.Data);
                         }
                         else
                         {
@@ -60,9 +60,9 @@ namespace Frontend.Controllers
                         {
                             string apiResponse = await response.Content.ReadAsStringAsync();
 
-                            var natjecanja = JsonConvert.DeserializeObject<List<NatjecanjeDto>>(apiResponse);
+                            var apiResponseObject = JsonConvert.DeserializeObject<ApiResponse<List<NatjecanjeDto>>>(apiResponse);
 
-                            return View(natjecanja);
+                            return View(apiResponseObject.Data);
                         }
                         else
                         {

@@ -1,9 +1,9 @@
-# Druga laboratorijska vježba iz kolegija Otvoreno računarstvo
+# Treća laboratorijska vježba iz kolegija Otvoreno računarstvo
 ## Naslov: Sportska natjecanja
 Licenca: Creative Commons - CC0 1.0 Universal <br>
 Autor: Filip Jakovina <br>
-Objavljeno: 14.11.2023. <br>
-Verzija: 2.0 <br>
+Objavljeno: 19.12.2023. <br>
+Verzija: 3.0 <br>
 Jezik: hrvatski <br>
 Format datuma: ISO 8601 <br>
 Tema: Popis sportskih natjecanja <br>

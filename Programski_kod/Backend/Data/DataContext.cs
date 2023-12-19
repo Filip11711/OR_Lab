@@ -45,7 +45,7 @@ public partial class DataContext : DbContext
 
             entity.HasOne(d => d.Natjecatelj).WithOne(p => p.Igrac)
                 .HasForeignKey<Igrac>(d => d.Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("igrac_id_fkey");
         });
 
@@ -91,7 +91,7 @@ public partial class DataContext : DbContext
 
             entity.HasOne(d => d.Natjecanje).WithMany(p => p.Natjecatelji)
                 .HasForeignKey(d => d.Natjecanjeid)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("natjecatelj_natjecanjeid_fkey");
         });
 
@@ -114,7 +114,7 @@ public partial class DataContext : DbContext
 
             entity.HasOne(d => d.Natjecatelj).WithOne(p => p.Tim)
                 .HasForeignKey<Tim>(d => d.Id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("tim_id_fkey");
         });
 

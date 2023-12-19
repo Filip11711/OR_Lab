@@ -1,0 +1,750 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Sportska natjecanje - API",
+        "version": "3.0"
+    },
+    "paths": {
+        "/api/Data/tim/{id}": {
+            "get": {
+                "tags": [
+                    "Tim"
+                ],
+                "summary": "Dohvati tim po njegovom ID-u",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Tim"
+                ],
+                "summary": "Obriši tim",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data/igrac/{id}": {
+            "get": {
+                "tags": [
+                    "Igrać"
+                ],
+                "summary": "Dohvati igraća po njegovom ID-u",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Igrać"
+                ],
+                "summary": "Obriši igraća",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data/{id}": {
+            "get": {
+                "tags": [
+                    "Natjecanje"
+                ],
+                "summary": "Dohvati natjecanje po njegovom ID-u",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NatjecanjeDtoApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Natjecanje"
+                ],
+                "summary": "Obriši natjecanje",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NatjecanjeDtoApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data": {
+            "get": {
+                "tags": [
+                    "Natjecanje"
+                ],
+                "summary": "Dohvat svih natjecanja",
+                "parameters": [
+                    {
+                        "name": "searchText",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filterColumn",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NatjecanjeDtoListApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Natjecanje"
+                ],
+                "summary": "Dodaj novo natjecanje",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NatjecanjeDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NatjecanjeDtoApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Natjecanje"
+                ],
+                "summary": "Uredi natjecanje",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NatjecanjeDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NatjecanjeDtoApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data/json": {
+            "get": {
+                "tags": [
+                    "Json"
+                ],
+                "summary": "Preuzimanje Json datoteke",
+                "parameters": [
+                    {
+                        "name": "searchText",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filterColumn",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data/csv": {
+            "get": {
+                "tags": [
+                    "CSV"
+                ],
+                "summary": "Preuzimanje CSV datoteke",
+                "parameters": [
+                    {
+                        "name": "searchText",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filterColumn",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data/tim/{natjecanjeId}": {
+            "post": {
+                "tags": [
+                    "Tim"
+                ],
+                "summary": "Dodaj novi tim za određeno natjecanje",
+                "parameters": [
+                    {
+                        "name": "natjecanjeId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Tim"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data/igrac/{natjecanjeId}": {
+            "post": {
+                "tags": [
+                    "Igrać"
+                ],
+                "summary": "Dodaj novog igraća za određeno natjecanje",
+                "parameters": [
+                    {
+                        "name": "natjecanjeId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Igrac"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data/tim": {
+            "put": {
+                "tags": [
+                    "Tim"
+                ],
+                "summary": "Uredi tim",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Tim"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data/igrac": {
+            "put": {
+                "tags": [
+                    "Igrać"
+                ],
+                "summary": "Uredi igraća",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Igrac"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TimApiResponse"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/Data/openapi": {
+            "get": {
+                "tags": [
+                    "OpenApi"
+                ],
+                "summary": "Preuzimanje OpenApi specifikacije",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404":{
+                        "description": "Not Found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Igrac": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": false
+                    },
+                    "ime": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "prezime": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "datumRodenja": {
+                        "type": "string",
+                        "format": "date",
+                        "nullable": false
+                    },
+                    "spol": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "drzava": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "additionalProperties": false
+            },
+            "NatjecanjeDto": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": false
+                    },
+                    "naziv": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "sport": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "godina": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": false
+                    },
+                    "organizator": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "prvak": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "mjestoFinale": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "brojNatjecatelja": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": true
+                    },
+                    "igraci": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Igrac"
+                        },
+                        "nullable": true
+                    },
+                    "timovi": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Tim"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "NatjecanjeDtoApiResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "message": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/NatjecanjeDto"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "NatjecanjeDtoListApiResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "message": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NatjecanjeDto"
+                        },
+                        "nullable": true
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Tim": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "nullable": false
+                    },
+                    "naziv": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "drzava": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "osnovan": {
+                        "type": "string",
+                        "format": "date",
+                        "nullable": false
+                    },
+                    "spolIgraca": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "trener": {
+                        "type": "string",
+                        "nullable": false
+                    }
+                },
+                "additionalProperties": false
+            },
+            "TimApiResponse": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "message": {
+                        "type": "string",
+                        "nullable": false
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/Tim"
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    }
+}
