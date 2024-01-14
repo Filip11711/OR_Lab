@@ -1,4 +1,4 @@
-# Čwtvrta laboratorijska vježba iz kolegija Otvoreno računarstvo
+# Četvrta laboratorijska vježba iz kolegija Otvoreno računarstvo
 ## Naslov: Sportska natjecanja
 Licenca: Creative Commons - CC0 1.0 Universal <br>
 Autor: Filip Jakovina <br>
