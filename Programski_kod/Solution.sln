@@ -10,7 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend", "Frontend\Fronte
 		{7B776B2A-5BCE-43E6-B821-15658FE37386} = {7B776B2A-5BCE-43E6-B821-15658FE37386}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{902FE19E-740A-43FE-BFF5-ECE281F5CD9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{902FE19E-740A-43FE-BFF5-ECE281F5CD9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

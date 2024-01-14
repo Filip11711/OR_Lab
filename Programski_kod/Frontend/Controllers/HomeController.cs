@@ -87,5 +87,31 @@ namespace Frontend.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult DownloadCsv()
+        {
+            var filePath = "C:\\Users\\filip\\Desktop\\Faks\\4. godina\\Zimski\\Otvoreno_racunarstvo\\Github\\sportska_natjecanja.csv";
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound();
+            }
+
+            var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+
+            return File(fileStream, "application/csv", "sportska_natjecanja.csv");
+        }
+
+        public IActionResult DownloadJson()
+        {
+            var filePath = "C:\\Users\\filip\\Desktop\\Faks\\4. godina\\Zimski\\Otvoreno_racunarstvo\\Github\\sportska_natjecanja.json";
+            if (!System.IO.File.Exists(filePath))
+            {
+                return NotFound();
+            }
+
+            var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+
+            return File(fileStream, "application/json", "sportska_natjecanja.json");
+        }
     }
 }

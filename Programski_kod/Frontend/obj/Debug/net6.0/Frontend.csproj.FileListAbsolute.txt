@@ -63,3 +63,12 @@ C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Program
 C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\obj\Debug\net6.0\Frontend.pdb
 C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\obj\Debug\net6.0\Frontend.genruntimeconfig.cache
 C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\obj\Debug\net6.0\ref\Frontend.dll
+C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\bin\Debug\net6.0\Auth0.AspNetCore.Authentication.dll
+C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\filip\Desktop\Faks\4. godina\Zimski\Otvoreno_racunarstvo\Github\Programski_kod\Frontend\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
